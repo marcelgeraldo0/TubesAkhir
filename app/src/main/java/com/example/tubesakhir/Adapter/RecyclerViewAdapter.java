@@ -1,5 +1,6 @@
 package com.example.tubesakhir.Adapter;
 
+
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,16 +24,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private static final String TAG = "RecycleViewAdapter";
 
-    private List<Course> list_Course_history;
+    private List<Course> list_Course_History;
     private Context context;
     private MainActivity activity;
 
-    public RecyclerViewAdapter(List<Course> list_case_input, MainActivity activity) {
-        this.list_Course_history = list_case_input;
+    public RecyclerViewAdapter(List<Course> list_course_History, MainActivity activity) {
+        this.list_Course_History = list_course_History;
         this.activity = activity;
-        if (list_Course_history.isEmpty()) {
-            this.list_Course_history = new ArrayList<Course>();
-//            Log.d("MVP : " ,"EMPTY");
+        if (list_Course_History.isEmpty()) {
+            this.list_Course_History = new ArrayList<Course>();
         }
     }
 
@@ -48,19 +48,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: called");
-        ((ViewHolder)holder).tv_index.setText(String.valueOf(position+1));
-
-  }
-
-
+        ((ViewHolder) holder).tv_index.setText(String.valueOf(position + 1));
+    }
     public void add(List<Course> caseInput) {
-        this.list_Course_history.addAll(caseInput);
+        this.list_Course_History.addAll(caseInput);
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return list_Course_history.size();
+        return list_Course_History.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
