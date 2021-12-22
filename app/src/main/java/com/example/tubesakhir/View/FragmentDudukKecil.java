@@ -14,9 +14,9 @@ import android.widget.Button;
 import com.example.tubesakhir.R;
 
 import java.util.Random;
-public class FragmentDuduk implements AppCompatActivity{
+public class FragmentDudukKecil implements AppCompatActivity{
 
-    public static final String TAG = "FragmentDuduk";
+    public static final String TAG = "FragmentDudukKecil";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
