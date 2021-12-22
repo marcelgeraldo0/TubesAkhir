@@ -1,23 +1,26 @@
 package com.example.tubesakhir;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
-import com.example.myapplication.databinding.ActivityMainBinding;
-import com.example.myapplication.databinding.FragmentPesanBinding;
+import com.example.tubesakhir.View.FragmentLogin;
+import com.javacodegeeks.android.apps.moviesearchapp.R;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
-    private FragmentPesanBinding fragmentPesanBinding;
-    private LoginActivity loginActivity;
-
+    Handler h = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.binding = ActivityMainBinding.inflate(getLayoutInflater());
-        //this.adapter = new AdapterMain(this);
+        h.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(MainActivity.this, FragmentLogin.class);
+                startActivity(i);
+                finish();
+            }
+        },5000);
     }
 }
